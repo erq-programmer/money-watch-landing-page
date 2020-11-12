@@ -1,9 +1,9 @@
 /* eslint-disable import/prefer-default-export */
 export const theme = {
   color: {
-    primary: '#2C4393',
-    secondary: '#23B6C2',
-    tertiary: '#E21920',
+    primary: '#106964',
+    secondary: '#2F2E41',
+    tertiary: '#34D1C9',
     black: '#000',
     white: '#fff',
     grey1: '#333',
@@ -23,7 +23,7 @@ export const theme = {
     xxl: '6.4rem',
   },
   font: {
-    primary: 'Poppins',
+    primary: 'Lato',
     regular: '400',
     medium: '500',
     semiBold: '600',
