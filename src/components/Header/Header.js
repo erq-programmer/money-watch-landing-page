@@ -15,6 +15,14 @@ const HeaderWrapper = styled.header`
   overflow: hidden;
 `;
 
+const HeroSection = styled.section`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 const Overlay = styled.div`
   opacity: ${({ isMenuOpen }) => (isMenuOpen ? '1' : '0')};
   visibility: ${({ isMenuOpen }) => (isMenuOpen ? 'visible' : 'hidden')};
@@ -24,8 +32,7 @@ const Overlay = styled.div`
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  transition: all 0.3s ease-in-out;
-  /* z-index: 9; */
+  transition: opacity 0.3s ease-in-out;
 `;
 
 const Header = () => {
@@ -37,8 +44,10 @@ const Header = () => {
       <Overlay isMenuOpen={isMenuOpen} onClick={handleToggleMenu} />
       <Menu isMenuOpen={isMenuOpen} handleToggleMenu={handleToggleMenu} />
       <Logo />
-      <Shape />
-      <Hero />
+      <HeroSection>
+        <Shape />
+        <Hero />
+      </HeroSection>
     </HeaderWrapper>
   );
 };
