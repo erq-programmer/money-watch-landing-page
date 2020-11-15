@@ -3,6 +3,7 @@ import { Link } from 'react-scroll';
 import styled from 'styled-components';
 
 const NavigationWrapper = styled.nav`
+  grid-area: menu;
   width: 100%;
 `;
 
@@ -63,6 +64,7 @@ const HamburgerBox = styled.span`
 `;
 
 const NavigationList = styled.ul`
+  z-index: 9;
   display: flex;
   flex-direction: column;
   justify-content: center;

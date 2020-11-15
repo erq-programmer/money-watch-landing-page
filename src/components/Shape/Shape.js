@@ -1,28 +1,45 @@
 import React from 'react';
 import styled from 'styled-components';
 import ShapeMobileSVG from '../../images/Shape-mobile.svg';
+import ShapeSVG from '../../images/Shape.svg';
 import ShoppingIllustration from '../../images/ShoppingIllustration.svg';
+import { device } from '../../theme/device';
 
 const Wrapper = styled.section`
-  width: 180%;
-  position: relative;
-  left: 5%;
+  width: 100%;
   z-index: -1;
+  position: relative;
+
+  @media ${device.laptop} {
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+  }
 `;
 
 const ShapeImage = styled.img`
-  /* transform: rotate(75deg); */
-  /* position: absolute; */
-  /* margin-top: -40px; */
-  width: 100%;
-  /* max-height: 500px; */
+  width: 180%;
+  position: relative;
+  left: -30%;
+
+  @media ${device.laptop} {
+    top: -20vh;
+    left: 40%;
+    width: 180%;
+  }
 `;
 
 const ShoppingImage = styled.img`
   position: absolute;
-  left: 30%;
+  left: 3%;
   top: 10%;
-  width: 70%;
+  width: 120%;
+
+  @media ${device.laptop} {
+    left: 60%;
+    top: 15%;
+    width: 50%;
+  }
 `;
 
 const Shape = () => {

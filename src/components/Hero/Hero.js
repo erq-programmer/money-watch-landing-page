@@ -1,11 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from '../Button/Button';
+import { device } from '../../theme/device';
 
 const Wrapper = styled.section`
   padding: 60px 20px;
-  display: grid;
-  justify-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media ${device.laptop} {
+    position: absolute;
+    text-align: left;
+    height: auto;
+    width: 50%;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    justify-content: flex-start;
+  }
 `;
 
 const Heading = styled.h1`

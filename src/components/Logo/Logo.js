@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Image from 'gatsby-image';
 import { graphql, useStaticQuery } from 'gatsby';
 
 const AnchorWrapper = styled.a`
@@ -8,10 +9,9 @@ const AnchorWrapper = styled.a`
   height: 150px;
 `;
 
-const StyledImage = styled.div`
+const StyledImage = styled(Image)`
   width: 150px;
   height: 150px;
-  background-image: url(${({ image }) => image});
 `;
 
 const Logo = () => {
@@ -19,8 +19,8 @@ const Logo = () => {
     {
       file(name: { eq: "logo" }) {
         childImageSharp {
-          fixed(width: 150, height: 150) {
-            src
+          fluid {
+            ...GatsbyImageSharpFluid_noBase64
           }
         }
       }
@@ -28,7 +28,7 @@ const Logo = () => {
   `);
   return (
     <AnchorWrapper href="/">
-      <StyledImage image={data.file.childImageSharp.fixed.src} alt="" />
+      <StyledImage fluid={data.file.childImageSharp.fluid} alt="" />
     </AnchorWrapper>
   );
 };
