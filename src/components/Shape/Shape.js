@@ -23,9 +23,11 @@ const ShapeImage = styled.img`
   left: -30%;
 
   @media ${device.laptop} {
+    position: absolute;
     top: -20vh;
     left: 40%;
     width: 180%;
+    z-index: 20;
   }
 `;
 
@@ -34,6 +36,7 @@ const ShoppingImage = styled.img`
   left: 3%;
   top: 10%;
   width: 120%;
+  z-index: 2;
 
   @media ${device.laptop} {
     left: 60%;

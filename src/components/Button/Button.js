@@ -10,9 +10,13 @@ const ButtonStyle = styled.button`
   font-weight: ${({ theme }) => theme.font.bold};
   display: block;
   border: ${({ theme, outline }) => (outline ? `2px solid ${theme.color.primary}` : 'none')};
-  margin: 1rem 1rem 1rem 0;
+  margin: 1rem 0;
   border-radius: ${({ theme }) => theme.border.s};
   width: 200px;
+
+  @media ${device.laptop} {
+    margin: 1rem 1rem 1rem 0;
+  }
 `;
 
 const Button = ({ outline, children }) => {
