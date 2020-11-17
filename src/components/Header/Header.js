@@ -28,26 +28,13 @@ const HeaderWrapper = styled.header`
   flex-direction: column;
   align-items: center;
   position: relative;
-  /* overflow: hidden; */
 `;
 
 const Navbar = styled.section`
-  display: flex-reverse;
-  /* background-color: red; */
-  width: 100%;
-  justify-content: center;
-`;
-
-const HeroSection = styled.section`
-  width: 100%;
-  height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
+  width: 100%;
   align-items: center;
-
-  @media ${device.laptop} {
-    display: grid;
-  }
 `;
 
 const Overlay = styled.div`

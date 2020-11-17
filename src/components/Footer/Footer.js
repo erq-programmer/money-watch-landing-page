@@ -4,6 +4,7 @@ import heartSolid from '@iconify/icons-clarity/heart-solid';
 import styled from 'styled-components';
 import Logo from '../Logo/Logo';
 import Socials from '../Socials/Socials';
+import Menu from '../Menu/Menu';
 
 const Wrapper = styled.footer`
   width: 100%;
@@ -44,6 +45,7 @@ const Footer = () => {
           {new Date().getFullYear()}
         </CopyrightInfo>
         <Divider />
+        {/* <Menu /> */}
         <Socials />
       </Content>
     </Wrapper>

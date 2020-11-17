@@ -26,6 +26,10 @@ const Hamburger = styled.button`
   &:focus {
     outline: none;
   }
+
+  @media ${device.laptop} {
+    display: none;
+  }
 `;
 
 const HamburgerBox = styled.span`
@@ -80,10 +84,26 @@ const NavigationList = styled.ul`
   transition: transform 0.3s ease-in-out;
   list-style: none;
   transform: ${({ isMenuOpen }) => (isMenuOpen ? 'translateX(0)' : 'translateX(100%)')};
+
+  @media ${device.laptop} {
+    position: relative;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+    height: auto;
+    width: auto;
+    transform: none;
+    padding: 0;
+    margin: 0 0 0 4rem;
+
+    li a {
+      color: ${({ theme }) => theme.color.grey1};
+    }
+  }
 `;
 
 const NavigationItem = styled.li`
-  margin: 30px 20px;
+  margin: 3rem 2rem;
 
   .active {
     color: ${({ theme }) => theme.color.primary};

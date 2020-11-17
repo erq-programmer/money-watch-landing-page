@@ -10,7 +10,7 @@ const AnchorWrapper = styled.a`
 `;
 
 const StyledImage = styled(Image)`
-  width: 100%;
+  width: ${({ footer }) => (footer ? '100px' : '150px')};
   height: 100%;
 `;
 
@@ -28,7 +28,7 @@ const Logo = ({ footer }) => {
   `);
   return (
     <AnchorWrapper footer={footer} href="/">
-      <StyledImage fluid={data.file.childImageSharp.fluid} alt="" />
+      <StyledImage footer={footer} fluid={data.file.childImageSharp.fluid} alt="" />
     </AnchorWrapper>
   );
 };
