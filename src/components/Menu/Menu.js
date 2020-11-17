@@ -30,7 +30,7 @@ const Hamburger = styled.button`
 const HamburgerBox = styled.span`
   width: 3rem;
   height: 0.3rem;
-  background: ${({ theme, isMenuOpen }) => (isMenuOpen ? 'transparent' : theme.color.grey1)};
+  background: ${({ theme, isMenuOpen }) => (isMenuOpen ? 'transparent' : theme.color.gray1)};
   border-radius: 10px;
   transition: all 0.3s linear;
   position: relative;
@@ -43,7 +43,7 @@ const HamburgerBox = styled.span`
     display: block;
     width: 3rem;
     height: 0.3rem;
-    background: ${({ theme, isMenuOpen }) => (isMenuOpen ? theme.color.grey1 : theme.color.grey1)};
+    background: ${({ theme, isMenuOpen }) => (isMenuOpen ? theme.color.gray1 : theme.color.gray1)};
     border-radius: 10px;
     transition: all 0.3s linear;
     position: absolute;
@@ -92,9 +92,10 @@ const NavigationItem = styled.li`
 const StyledLink = styled(Link)`
   font-size: ${({ theme }) => theme.size.s};
   font-weight: ${({ theme }) => theme.font.medium};
-  color: ${({ theme }) => theme.color.grey1};
+  color: ${({ theme }) => theme.color.gray1};
   text-decoration: none;
   padding: 20px;
+  cursor: pointer;
 `;
 
 const SrOnly = styled.span`

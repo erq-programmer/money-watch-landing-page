@@ -1,34 +1,42 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useMediaQuery } from 'react-responsive';
 import ShapeMobileSVG from '../../images/Shape-mobile.svg';
 import ShapeSVG from '../../images/Shape.svg';
+import Shaped from '../../images/Shaped.svg';
 import ShoppingIllustration from '../../images/ShoppingIllustration.svg';
 import { device } from '../../theme/device';
 
+const Desktop = ({ children }) => {
+  const isDesktop = useMediaQuery({ minWidth: 1024 });
+  return isDesktop ? children : null;
+};
+
+const Mobile = ({ children }) => {
+  const isMobile = useMediaQuery({ maxWidth: 1023 });
+  return isMobile ? children : null;
+};
+
 const Wrapper = styled.section`
   width: 100%;
-  z-index: -1;
+  height: 100%;
   position: relative;
-
-  @media ${device.laptop} {
-    width: 100%;
-    position: absolute;
-    z-index: 0;
-  }
+  top: 0;
+  left: 0;
 `;
 
-const ShapeImage = styled.img`
-  width: 180%;
+const ShapeMobile = styled.img`
+  width: 190%;
   position: relative;
-  left: -30%;
+  left: -40%;
+`;
 
-  @media ${device.laptop} {
-    position: absolute;
-    top: -20vh;
-    left: 40%;
-    width: 180%;
-    z-index: 20;
-  }
+const ShapeDesktop = styled.img`
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: -300px;
+  width: 50%;
 `;
 
 const ShoppingImage = styled.img`
@@ -36,11 +44,10 @@ const ShoppingImage = styled.img`
   left: 3%;
   top: 10%;
   width: 120%;
-  z-index: 2;
 
   @media ${device.laptop} {
     left: 60%;
-    top: 15%;
+    padding-top: 10%;
     width: 50%;
   }
 `;
@@ -48,7 +55,12 @@ const ShoppingImage = styled.img`
 const Shape = () => {
   return (
     <Wrapper>
-      <ShapeImage src={ShapeMobileSVG} alt="" />
+      <Mobile>
+        <ShapeMobile src={ShapeMobileSVG} alt="" />
+      </Mobile>
+      <Desktop>
+        <ShapeDesktop src={Shaped} alt="" />
+      </Desktop>
       <ShoppingImage src={ShoppingIllustration} alt="" />
     </Wrapper>
   );

@@ -1,19 +1,34 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useMediaQuery } from 'react-responsive';
+
 import Logo from '../Logo/Logo';
 import Menu from '../Menu/Menu';
 import Hero from '../Hero/Hero';
 import Shape from '../Shape/Shape';
 import { device } from '../../theme/device';
 
+const Desktop = ({ children }) => {
+  const isDesktop = useMediaQuery({ minWidth: 1024 });
+  return isDesktop ? children : null;
+};
+
+const Mobile = ({ children }) => {
+  const isMobile = useMediaQuery({ maxWidth: 1023 });
+  return isMobile ? children : null;
+};
+
 const HeaderWrapper = styled.header`
   width: 100%;
   min-height: 100vh;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 `;
 
 const Navbar = styled.section`
@@ -59,7 +74,9 @@ const Header = () => {
         <Menu isMenuOpen={isMenuOpen} handleToggleMenu={handleToggleMenu} />
         <Logo />
       </Navbar>
-      <Shape />
+      <Mobile>
+        <Shape />
+      </Mobile>
       <Hero />
     </HeaderWrapper>
   );

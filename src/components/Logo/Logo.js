@@ -5,16 +5,16 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 const AnchorWrapper = styled.a`
   display: block;
-  width: 150px;
-  height: 150px;
+  width: ${({ footer }) => (footer ? '100px' : '150px')};
+  height: ${({ footer }) => (footer ? '100px' : '150px')};
 `;
 
 const StyledImage = styled(Image)`
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: 100%;
 `;
 
-const Logo = () => {
+const Logo = ({ footer }) => {
   const data = useStaticQuery(graphql`
     {
       file(name: { eq: "logo" }) {
@@ -27,7 +27,7 @@ const Logo = () => {
     }
   `);
   return (
-    <AnchorWrapper href="/">
+    <AnchorWrapper footer={footer} href="/">
       <StyledImage fluid={data.file.childImageSharp.fluid} alt="" />
     </AnchorWrapper>
   );
