@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import styled from 'styled-components';
+import { device } from '../../theme/device';
 
 const NavigationWrapper = styled.nav`
   grid-area: menu;
