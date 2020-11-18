@@ -33,6 +33,11 @@ const Heading = styled.h1`
   font-weight: ${({ theme }) => theme.font.bold};
   padding: 3rem 0 2rem;
   margin: 0;
+
+  @media ${device.laptop} {
+    font-size: ${({ theme }) => theme.size.xxl};
+    line-height: 66px;
+  }
 `;
 
 const Text = styled.p`

@@ -37,7 +37,7 @@ const Box = styled.div`
 const NewsletterImage = styled.img`
   width: 80%;
   max-width: 400px;
-  margin: 0 auto;
+  margin: 3rem auto 0;
 `;
 
 const Heading = styled.h2`
@@ -48,6 +48,11 @@ const Heading = styled.h2`
   font-weight: ${({ theme }) => theme.font.bold};
   padding: 3rem 0 2rem;
   margin: 0;
+
+  @media ${device.laptop} {
+    font-size: ${({ theme }) => theme.size.xl};
+    line-height: 66px;
+  }
 `;
 
 const Text = styled.p`

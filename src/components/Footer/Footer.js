@@ -14,6 +14,7 @@ const Wrapper = styled.footer`
 const Content = styled.section`
   width: 100%;
   max-width: 1440px;
+  margin: 0 auto;
   padding: 2rem 2rem 4rem;
   display: grid;
   justify-items: center;

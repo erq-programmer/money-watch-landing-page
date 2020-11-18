@@ -12,7 +12,7 @@ const InputContainer = styled.div`
   & > textarea {
     border: 2px solid ${({ theme }) => theme.color.secondary};
     border-radius: ${({ theme }) => theme.border.s};
-    margin: 0 0 1rem;
+    margin: 1rem 0;
     padding: 1rem 1rem;
     width: 100%;
     height: 58px;
@@ -30,7 +30,7 @@ const InputContainer = styled.div`
     color: ${({ theme }) => theme.color.gray2};
     position: absolute;
     font-size: ${({ theme }) => theme.size.xs};
-    top: 2rem;
+    top: 3rem;
     left: 1.6rem;
     transition: all 0.2s ease;
 
