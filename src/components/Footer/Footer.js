@@ -38,7 +38,7 @@ const Divider = styled.div`
   background-color: ${({ theme }) => theme.color.gray4};
 `;
 
-const Footer = () => {
+const Footer = ({ isMenuOpen, handleToggleMenu }) => {
   return (
     <Wrapper>
       <Content>
@@ -48,7 +48,7 @@ const Footer = () => {
           {new Date().getFullYear()}
         </CopyrightInfo>
         <Divider />
-        <Menu footer />
+        <Menu isMenuOpen={isMenuOpen} handleToggleMenu={handleToggleMenu} footer />
         <Socials />
       </Content>
     </Wrapper>

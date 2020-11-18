@@ -14,15 +14,16 @@ const ButtonStyle = styled.button`
   border-radius: ${({ theme }) => theme.border.s};
   width: 200px;
   outline: none;
+  cursor: pointer;
 
   @media ${device.laptop} {
-    margin: 1rem 1rem 1rem 0;
+    margin: ${({ marginLeft }) => (marginLeft ? '1rem' : '1rem 1rem 1rem 0')};
   }
 `;
 
-const Button = ({ outline, children }) => {
+const Button = ({ outline, children, marginLeft }) => {
   return (
-    <ButtonStyle outline={outline} type="button">
+    <ButtonStyle outline={outline} type="button" marginLeft={marginLeft}>
       {children}
     </ButtonStyle>
   );

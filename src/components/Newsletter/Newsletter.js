@@ -30,7 +30,7 @@ const Box = styled.div`
     margin: 0 auto;
     padding: 12rem 6rem;
     box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.24);
-    border-radius: 2px;
+    border-radius: ${({ theme }) => theme.border.s};
   }
 `;
 
@@ -95,7 +95,7 @@ const Newsletter = () => {
             value={email}
             onChange={(val) => setEmail({ email: val })}
           />
-          <Button>Get Early Access</Button>
+          <Button marginLeft>Get Early Access</Button>
         </NewsletterForm>
       </Box>
     </Wrapper>

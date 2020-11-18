@@ -11,17 +11,21 @@ const NavigationWrapper = styled.nav`
 const Hamburger = styled.button`
   position: fixed;
   top: 5%;
-  right: 1rem;
+  right: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  width: 5rem;
-  height: 5rem;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  height: 6rem;
   background: transparent;
   border: none;
   cursor: pointer;
   padding: 1rem;
   z-index: 10;
+  background: ${({ theme }) => theme.color.white};
+  border-radius: 50%;
+  box-shadow: 0px 2px 6px #0000001a;
 
   &:focus {
     outline: none;
@@ -33,10 +37,10 @@ const Hamburger = styled.button`
 `;
 
 const HamburgerBox = styled.span`
-  width: 3rem;
+  width: 2.2rem;
   height: 0.3rem;
   background: ${({ theme, isMenuOpen }) => (isMenuOpen ? 'transparent' : theme.color.gray1)};
-  border-radius: 10px;
+  border-radius: 1rem;
   transition: all 0.3s linear;
   position: relative;
   transform-origin: 1px;
@@ -46,7 +50,7 @@ const HamburgerBox = styled.span`
   &::after {
     content: '';
     display: block;
-    width: 3rem;
+    width: 2.2rem;
     height: 0.3rem;
     background: ${({ theme, isMenuOpen }) => (isMenuOpen ? theme.color.gray1 : theme.color.gray1)};
     border-radius: 10px;
@@ -58,12 +62,12 @@ const HamburgerBox = styled.span`
   &::before {
     top: -0.8rem;
     transform: ${({ isMenuOpen }) =>
-      isMenuOpen ? 'translateY(-0.3rem) translateX(0.4rem) rotate(45deg) ' : 'rotate(0)'};
+      isMenuOpen ? 'translateY(0.2rem) translateX(0.3rem) rotate(45deg) ' : 'rotate(0)'};
   }
 
   &::after {
     transform: ${({ isMenuOpen }) =>
-      isMenuOpen ? 'translateY(0) translateX(0.4rem) rotate(-45deg)' : 'rotate(0)'};
+      isMenuOpen ? 'translateY(0) translateX(0.3rem) rotate(-45deg)' : 'rotate(0)'};
     top: 0.8rem;
   }
 `;
@@ -115,7 +119,7 @@ const StyledLink = styled(Link)`
   font-weight: ${({ theme }) => theme.font.medium};
   color: ${({ theme }) => theme.color.gray1};
   text-decoration: none;
-  padding: 20px;
+  padding: 2rem;
   cursor: pointer;
 `;
 

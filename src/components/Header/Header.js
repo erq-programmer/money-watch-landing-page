@@ -50,10 +50,7 @@ const Overlay = styled.div`
   z-index: 1;
 `;
 
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const handleToggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
+const Header = ({ isMenuOpen, handleToggleMenu }) => {
   return (
     <HeaderWrapper id="home">
       <Overlay isMenuOpen={isMenuOpen} onClick={handleToggleMenu} />
