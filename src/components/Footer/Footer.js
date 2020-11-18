@@ -16,7 +16,9 @@ const Content = styled.section`
   max-width: 1440px;
   margin: 0 auto;
   padding: 2rem 2rem 4rem;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-items: center;
 `;
 
@@ -46,7 +48,7 @@ const Footer = () => {
           {new Date().getFullYear()}
         </CopyrightInfo>
         <Divider />
-        {/* <Menu /> */}
+        <Menu footer />
         <Socials />
       </Content>
     </Wrapper>

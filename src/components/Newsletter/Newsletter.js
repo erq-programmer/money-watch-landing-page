@@ -89,7 +89,7 @@ const Newsletter = () => {
         </Text>
         <NewsletterForm>
           <Input
-            name="email"
+            name="newsletter"
             label="Email"
             type="email"
             value={email}

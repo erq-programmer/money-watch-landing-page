@@ -88,13 +88,13 @@ const NavigationList = styled.ul`
   @media ${device.laptop} {
     position: relative;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: ${({ footer }) => (footer ? 'center' : 'flex-start')};
     background-color: transparent;
     height: auto;
     width: auto;
     transform: none;
     padding: 0;
-    margin: 0 0 0 4rem;
+    margin: ${({ footer }) => (footer ? '0' : '0 0 0 4rem')};
 
     li a {
       color: ${({ theme }) => theme.color.grey1};
@@ -131,14 +131,14 @@ const SrOnly = styled.span`
   width: 1px;
 `;
 
-const Menu = ({ isMenuOpen, handleToggleMenu }) => {
+const Menu = ({ isMenuOpen, handleToggleMenu, footer }) => {
   return (
     <NavigationWrapper>
       <Hamburger type="button" aria-expanded="false" onClick={() => handleToggleMenu()}>
         <SrOnly>Open/close menu</SrOnly>
         <HamburgerBox isMenuOpen={isMenuOpen} />
       </Hamburger>
-      <NavigationList isMenuOpen={isMenuOpen}>
+      <NavigationList isMenuOpen={isMenuOpen} footer={footer}>
         <NavigationItem>
           <StyledLink activeClass="active" to="home" spy smooth duration={1000}>
             Home
