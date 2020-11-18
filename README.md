@@ -7,7 +7,7 @@
   Money Watch Landing Page
 </h1>
 
-Website based on Gatsby.js for Bryzol Catering, this is a second webiste built for this company.
+Website based on Gatsby.js for Money Watch App. 
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3c1b5dfc-b285-4ba6-961c-5d781601d293/deploy-status)](https://app.netlify.com/sites/money-watch/deploys)
 
