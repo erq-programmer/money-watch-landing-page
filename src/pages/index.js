@@ -6,6 +6,7 @@ import Header from '../components/Header/Header';
 import Newsletter from '../components/Newsletter/Newsletter';
 import Shape from '../components/Shape/Shape';
 import Contact from '../components/Contact/Contact';
+import SmallShape from '../components/SmallShape/SmallShape';
 
 const Desktop = ({ children }) => {
   const isDesktop = useMediaQuery({ minWidth: 1024 });
@@ -32,9 +33,11 @@ const IndexPage = () => {
         <Desktop>
           <Shape />
         </Desktop>
-
         <Header />
         <main>
+          <Desktop>
+            <SmallShape />
+          </Desktop>
           <Newsletter />
           <Contact />
         </main>

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
 import ShapeMobileSVG from '../../images/Shape-mobile.svg';
 import ShapeSVG from '../../images/Shape.svg';
-import Shaped from '../../images/Shaped.svg';
 import ShoppingIllustration from '../../images/ShoppingIllustration.svg';
 import { device } from '../../theme/device';
 
@@ -59,7 +58,7 @@ const Shape = () => {
         <ShapeMobile src={ShapeMobileSVG} alt="" />
       </Mobile>
       <Desktop>
-        <ShapeDesktop src={Shaped} alt="" />
+        <ShapeDesktop src={ShapeSVG} alt="" />
       </Desktop>
       <ShoppingImage src={ShoppingIllustration} alt="" />
     </Wrapper>
