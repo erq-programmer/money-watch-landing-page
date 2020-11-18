@@ -13,6 +13,7 @@ const ButtonStyle = styled.button`
   margin: 1rem 0;
   border-radius: ${({ theme }) => theme.border.s};
   width: 200px;
+  outline: none;
 
   @media ${device.laptop} {
     margin: 1rem 1rem 1rem 0;

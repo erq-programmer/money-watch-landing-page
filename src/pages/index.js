@@ -5,6 +5,7 @@ import Layout from '../layouts/Layout';
 import Header from '../components/Header/Header';
 import Newsletter from '../components/Newsletter/Newsletter';
 import Shape from '../components/Shape/Shape';
+import Contact from '../components/Contact/Contact';
 
 const Desktop = ({ children }) => {
   const isDesktop = useMediaQuery({ minWidth: 1024 });
@@ -35,9 +36,7 @@ const IndexPage = () => {
         <Header />
         <main>
           <Newsletter />
-          <div id="contact" style={{ background: 'blue', height: '100vh' }}>
-            Contact
-          </div>
+          <Contact />
         </main>
       </Wrapper>
     </Layout>

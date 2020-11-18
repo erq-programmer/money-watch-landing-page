@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import newsletter from '../../images/newsletter.svg';
 import Button from '../Button/Button';
 import { device } from '../../theme/device';
+import Input from '../Input/Input';
 
 const Wrapper = styled.section`
   padding: 3rem 0;
@@ -10,7 +11,7 @@ const Wrapper = styled.section`
   background-color: ${({ theme }) => theme.color.secondary};
   position: relative;
   max-width: 1440px;
-  min-height: 100vh;
+  height: 100%;
 
   @media ${device.laptop} {
     background-color: transparent;
@@ -25,8 +26,9 @@ const Box = styled.div`
   text-align: center;
 
   @media ${device.laptop} {
-    padding: 12rem 6rem;
+    width: 90%;
     margin: 0 auto;
+    padding: 12rem 6rem;
     box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.24);
     border-radius: 2px;
   }
@@ -38,7 +40,7 @@ const NewsletterImage = styled.img`
   margin: 0 auto;
 `;
 
-const Heading = styled.h1`
+const Heading = styled.h2`
   font-size: ${({ theme }) => theme.size.l};
   color: ${({ theme }) => theme.color.gray1};
   letter-spacing: 0.2px;
@@ -61,21 +63,6 @@ const Text = styled.p`
   }
 `;
 
-const Input = styled.input`
-  border: 2px solid ${({ theme }) => theme.color.secondary};
-  padding: 1rem 1rem;
-  width: 100%;
-  max-width: 500px;
-  height: 58px;
-  font-size: ${({ theme }) => theme.size.xs};
-  color: ${({ theme }) => theme.color.gray3};
-  border-radius: ${({ theme }) => theme.border.s};
-
-  @media ${device.tablet} {
-    margin-right: 1rem;
-  }
-`;
-
 const NewsletterForm = styled.div`
   display: flex;
   width: 100%;
@@ -85,6 +72,7 @@ const NewsletterForm = styled.div`
 `;
 
 const Newsletter = () => {
+  const [email, setEmail] = React.useState('');
   return (
     <Wrapper id="about">
       <Box>
@@ -95,7 +83,13 @@ const Newsletter = () => {
           ut labore et dolore magna aliqua.
         </Text>
         <NewsletterForm>
-          <Input placeholder="E-mail" />
+          <Input
+            name="email"
+            label="Email"
+            type="email"
+            value={email}
+            onChange={(val) => setEmail({ email: val })}
+          />
           <Button>Get Early Access</Button>
         </NewsletterForm>
       </Box>
